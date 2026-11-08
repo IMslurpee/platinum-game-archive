@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-card-master-page-theme="{&quot;revision&quot;:1,&quot;status&quot;:&quot;ready&quot;,&quot;enabled&quot;:true,&quot;activeOnPage&quot;:false,&quot;inactiveReason&quot;:&quot;site-disabled&quot;,&quot;currentHost&quot;:&quot;&quot;,&quot;engine&quot;:&quot;dynamicTheme&quot;,&quot;darkThemeDetected&quot;:false}" data-card-master-media-speed-proxy-state="{&quot;active&quot;:false,&quot;includeAudio&quot;:true,&quot;lockSpeed&quot;:false,&quot;selection&quot;:{&quot;mode&quot;:&quot;standard&quot;,&quot;speed&quot;:1}}" data-card-master-media-speed="{&quot;revision&quot;:2,&quot;status&quot;:&quot;ready&quot;,&quot;enabled&quot;:true,&quot;activeOnPage&quot;:false,&quot;currentHost&quot;:&quot;&quot;,&quot;lockSpeed&quot;:false,&quot;videoCount&quot;:0,&quot;audioCount&quot;:0,&quot;mediaCount&quot;:0,&quot;selection&quot;:{&quot;mode&quot;:&quot;standard&quot;,&quot;speed&quot;:1},&quot;showWheel&quot;:true,&quot;wheelItems&quot;:[{&quot;kind&quot;:&quot;speed&quot;,&quot;speed&quot;:0.5},{&quot;kind&quot;:&quot;speed&quot;,&quot;speed&quot;:1},{&quot;kind&quot;:&quot;speed&quot;,&quot;speed&quot;:1.25},{&quot;kind&quot;:&quot;speed&quot;,&quot;speed&quot;:1.5},{&quot;kind&quot;:&quot;speed&quot;,&quot;speed&quot;:2},{&quot;kind&quot;:&quot;speed&quot;,&quot;speed&quot;:4},{&quot;kind&quot;:&quot;random&quot;},{&quot;kind&quot;:&quot;hell&quot;}]}" data-card-master-input-modality="pointer"><head>
+<html lang="zh-CN"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#151e2d">
@@ -706,6 +706,46 @@ dialog::backdrop {
   .inline-control { grid-template-columns: 1fr; }
 }
 
+
+.insight-section > summary { list-style: none; }
+.insight-section > summary::-webkit-details-marker { display: none; }
+.insight-section > summary::after { content: "+"; color: var(--muted); margin-left: auto; font-size: 16px; font-weight: 400; }
+.insight-section[open] > summary::after { content: "−"; }
+@media (max-width: 1050px) {
+  .insight-panel { display: block; margin: 18px 0 0; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+  .insight-section { padding: 0; border: 0; }
+  .insight-section + .insight-section { border-top: 1px solid var(--line); }
+  .insight-section > summary { display: flex; align-items: center; gap: 8px; min-height: 46px; padding: 12px 16px; font-size: 12px; }
+  .insight-section > summary h2 { font-size: 12px; }
+  .insight-section > summary span { margin-right: 0; }
+  .insight-section > .aside-caption { margin: 0 16px 15px; }
+  .insight-section > .rank-list { padding: 0 16px 18px; gap: 15px; }
+  .insight-section > .year-stats { padding: 0 16px 18px; }
+  .insight-section > .rule-copy { margin: 0 16px 14px; font-size: 12px; }
+  .rules-section summary span { margin-left: auto; }
+  .rules-section summary::after { margin-left: 6px; }
+}
+@media (max-width: 580px) {
+  .archive-overview { grid-template-columns: 105px minmax(0, 1fr); min-height: 0; gap: 18px; padding: 20px; }
+  .archive-period > strong { font-size: 43px; margin-top: 10px; }
+  .archive-period > strong.all-years { font-size: 23px; letter-spacing: 0; line-height: 1.5; margin: 12px 0; }
+  .archive-period p { font-size: 9px; line-height: 1.7; }
+  .stats-grid { gap: 18px 0; }
+  .stat-block { padding: 0 0 0 11px; }
+  .stat-block > span { font-size: 9px; }
+  .stat-value { gap: 3px; margin-top: 7px; }
+  .stat-value strong { font-size: 23px; }
+  .stat-value small { font-size: 8px; }
+  .insight-panel { margin-top: 16px; }
+}
+@media (max-width: 370px) {
+  .archive-overview { grid-template-columns: 84px minmax(0, 1fr); gap: 12px; padding: 17px; }
+  .archive-period > strong { font-size: 36px; }
+  .archive-period > strong.all-years { font-size: 20px; }
+  .stat-value strong { font-size: 21px; }
+  .stat-block > span { font-size: 8px; }
+}
+
     .readonly-badge { display:inline-flex; align-items:center; border:1px solid #455970; border-radius:5px; padding:11px 16px; color:#c6d7e9; font-size:12px; background:#25374d; }
     .readonly-badge::before { content:""; width:6px; height:6px; margin-right:8px; border-radius:50%; background:#718fb1; }
   </style></head>
@@ -758,10 +798,10 @@ dialog::backdrop {
           <p id="periodNote">2026 年完成的游戏与个人评价</p>
         </div>
         <div class="stats-grid" aria-label="所选年份统计">
-          <article class="stat-block"><span id="platinumLabel">年度白金</span><div class="stat-value"><strong id="platinumCount">16</strong><small>部</small></div></article>
-          <article class="stat-block"><span>白金平均评分</span><div class="stat-value"><strong id="averageScore">4.12</strong><small>/ 5</small></div></article>
+          <article class="stat-block"><span id="platinumLabel">年度白金</span><div class="stat-value"><strong id="platinumCount">3</strong><small>部</small></div></article>
+          <article class="stat-block"><span>白金平均评分</span><div class="stat-value"><strong id="averageScore">4.50</strong><small>/ 5</small></div></article>
           <article class="stat-block"><span>正在白金</span><div class="stat-value"><strong id="playingCount">0</strong><small>部</small></div></article>
-          <article class="stat-block"><span>累计收藏</span><div class="stat-value"><strong id="totalCount">126</strong><small>部</small></div></article>
+          <article class="stat-block"><span>累计收藏</span><div class="stat-value"><strong id="totalCount">113</strong><small>部</small></div></article>
         </div>
       </section>
       <nav class="year-nav" id="yearNav" aria-label="按年份浏览"></nav>
@@ -804,7 +844,7 @@ dialog::backdrop {
           <div class="section-heading">
             <div class="collection-heading">
               <h2 id="viewTitle">2026 年游戏档案</h2>
-              <span id="resultCount" role="status">16 部游戏</span>
+              <span id="resultCount" role="status">3 部游戏</span>
             </div>
             <button class="text-button" id="clearFiltersBtn" type="button">
               清除筛选
@@ -833,24 +873,23 @@ dialog::backdrop {
             </table>
           </div>
         </section>
-        <aside class="insight-panel" aria-label="收藏分析">
-          <section class="favorites">
-            <div class="aside-heading">
+        <aside id="insightPanel" class="insight-panel" aria-label="收藏分析">
+          <details class="insight-section favorites" open="">
+            <summary class="aside-heading">
               <span class="small-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M8 3h8v6a4 4 0 0 1-8 0V3Z"></path>
                   <path d="M8 5H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-7-3h6v3H9z"></path></svg></span>
               <h2>我的白金 Top 10</h2>
-            </div>
+            </summary>
             <p class="aside-caption">全部白金游戏 · 按个人评分</p>
             <ol id="topList" class="rank-list"></ol>
-          </section>
-          <section>
-            <h2>年度足迹</h2>
+          </details>
+          <details class="insight-section yearly-insights" open="">
+            <summary class="aside-heading"><h2>年度足迹</h2></summary>
             <p class="aside-caption">白金数量 / 平均评分</p>
             <div id="yearStats" class="year-stats"></div>
-          </section>
-          <section class="rules-section">
-            <details>
+          </details>
+          <details class="insight-section rules-section">
               <summary>评分规则 <span>5 分制</span></summary>
               <p class="rule-copy">
                 玩法 35% + 剧情 30% + 画面 20% + 音乐 15%。
@@ -859,8 +898,7 @@ dialog::backdrop {
                 1 分完全无法忍受，2 分糟糕，3 分普普通通，4 分优秀值得推荐，5
                 分神作吹爆。
               </p>
-            </details>
-          </section>
+          </details>
         </aside>
       </div>
       <footer class="page-footer"><span>收藏快照：2026/11/8 19:31:24</span><span>由收藏者发布，仅供浏览。</span></footer>
@@ -1042,6 +1080,7 @@ function renderViewState() {
   });
   refs.powerpyxPanel.hidden = view !== "powerpyx";
   refs.contentLayout.hidden = view === "powerpyx";
+  document.querySelector("#insightPanel").hidden = view === "powerpyx";
   document.querySelector("#libraryToolbar").hidden = view === "powerpyx";
   document.querySelector("#yearNav").hidden = view === "powerpyx";
   document.querySelector("#archiveOverview").hidden = view === "powerpyx";
@@ -1189,6 +1228,28 @@ function bindDisplayControls() {
       renderDisplayMode();
     });
   });
+}
+
+function bindInsightLayout() {
+  const panel = document.querySelector("#insightPanel");
+  const layout = document.querySelector("#contentLayout");
+  const overview = document.querySelector("#archiveOverview");
+  const sections = [panel.querySelector(".favorites"), panel.querySelector(".yearly-insights"), panel.querySelector(".rules-section")];
+  const compact = window.matchMedia("(max-width: 1050px)");
+  function applyLayout() {
+    if (compact.matches) {
+      overview.after(panel);
+      panel.append(sections[2], sections[0], sections[1]);
+    } else if (panel.parentElement !== layout) {
+      layout.append(panel);
+      panel.append(...sections);
+    }
+    sections.forEach((section) => {
+      section.open = !compact.matches && !section.classList.contains("rules-section");
+    });
+  }
+  compact.addEventListener("change", applyLayout);
+  applyLayout();
 }
 
 function cell(text) {
@@ -1643,5 +1704,6 @@ function formatDate(value) {
     });
     if (currentView() === "ranking") refs.sortSelect.value = "rank";
     bindDisplayControls();
+    bindInsightLayout();
     render();
-  </script></body><div id="card-master-host" data-card-master-build-target="card-master-build-target:chromium" data-deck-entry-visible="true" data-deck-entry-position="custom" style="position: fixed; z-index: 2147483647; inset: 0px; pointer-events: none; display: none;"></div><div id="card-master-heavy-host" data-card-master-build-target="card-master-build-target:chromium" style=""></div></html>
+  </script></body></html>
